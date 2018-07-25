@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title> My Buys Page</title>
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+
+ </head>
+
+    <body>
+
+      <h1> <%= Data.UserData[0].name %> </h1>
+
+      <table>
+        <tr>
+          <th>Product description</th>
+          <th>Purchase date</th>
+          <th>Estimated arrival date</th>
+          <th>Supplier Name</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <% for(var i=0; i<Data.BuysData.length; i++) { %>
+              <td> <%= Data.BuysData[i].Descr %> </td>
+              <td> <%= Data.BuysData[i].Pdate %> </td>
+              <td> <%= Data.BuysData[i].Adate %> </td>
+              <td> <%= Data.BuysData[i].SuppDetails %> </td>
+              <td> <%= Data.BuysData[i].Status %> </td>
+        <%  }  %>
+        </tr>
+</table>
+
+  </body>
+
+</html>

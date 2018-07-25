@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title> Sign-Up Page</title>
+
+      <script src="./assets/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript">
+      // jQuery convention for running when the document has been fully loaded:
+      $(document).ready(() => {
+        $('#SignUpButton').click(() => {
+          $.ajax({
+            // all URLs are relative to http://localhost:3000/
+            url: 'SignUp',
+            type: 'POST', // <-- this is POST, not GET
+            data: {
+                    name: $('#Name').val(),
+                    Fname: $('#FamilyName').val(),
+                    Mail: $('#SignInMail').val(),
+                    Phone: $('#Pnumber').val(),
+                    Password: $('#Password').val()
+                  },
+            success: (data) => {
+              console.log(data);
+            }
+          });
+          window.location.href = 'Welcome';
+        });
+      });
+    </script>
+ </head>
+
+
+    <body>
+        <h1 align = "center" style="font-size:500%"> Sign-Up </h1>
+
+        Name: <input id="Name" type="text" size="20"/>
+        <br> <br>
+
+        Family Name: <input id="FamilyName" type="text" size="20"/>
+        <br> <br>
+
+        E-mail: <input id="SignInMail" type="text" size="20"/>
+        <br> <br>
+
+        Password: <input id="Password" type="text" size="20"/>
+        <br> <br>
+
+        Cellular Number : <input id="Pnumber" type="text" size="20"/>
+        <br> <br>
+
+        <button id="SignUpButton">Sign Up</button>
+        <br> <br>
+
+  </body>
+
+</html>

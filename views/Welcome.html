@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title> Welcome Page</title>
+
+    <script src="./assets/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript">
+
+        $(document).ready(() =>
+        {
+            $('#SignInButton').click(() =>
+            {
+                const requestURL = 'Welcome/' + $('#SignInMail').val();
+                console.log('making ajax request to:', requestURL);
+                $.ajax(
+                {
+                  // all URLs are relative to http://localhost:3000/
+                  url: requestURL,
+                  type: 'GET',
+                  dataType : 'json', // this URL returns data in JSON format
+                  success: (data) =>
+                  {
+                    console.log('You received some data!', data);
+                    if(data.Mail != $('#SignInMail').val())
+                      alert('Inccorect Mail Address');
+                    else
+                      {
+                        if(data.Password != $('#Password').val() )
+                          alert('Inccorect Password');
+                        else
+                        {
+                            const uidstr = 'MyBuys/' + data.Uid;
+                            window.location.href = uidstr;
+                        }
+                      }
+                  },
+                });
+            });
+        });
+
+            </script>
+ </head>
+
+
+    <body>
+        <h1 align = "center" style="font-size:500%"> Welcome </h1>
+        <h2 style="font-size:100%;" > Sign-In: </h1>
+
+        E-mail: <input id="SignInMail" type="text" size="20"/>
+        <br> <br>
+        Password: <input id="Password" type="text" size="20"/>
+        <br> <br>
+        <button id="SignInButton">Sign-In</button>
+        <br> <br>
+        <a href="SignUp" "SignUp"> Sign-Up</a>
+  </body>
+
+</html>

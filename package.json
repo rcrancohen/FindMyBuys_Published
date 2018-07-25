@@ -1,0 +1,18 @@
+{
+  "name": "findmybuys",
+  "version": "1.0.0",
+  "description": "List of all my internet purchases",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Ran Cohen",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "sqlite3": "^4.0.1"
+  }
+}
