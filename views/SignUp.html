@@ -28,10 +28,10 @@
                   },
             success: (data) => {
               console.log(data);
+              window.location.href = 'Welcome';
             }
           });
-          window.location.href = 'Welcome';
-        });
+      });
       });
     </script>
  </head>
@@ -66,26 +66,57 @@
       </div>
   </nav>
 
-        <h1 align = "center" style="font-size:500%"> Sign-Up </h1>
 
-        Name: <input id="Name" type="text" size="20"/>
-        <br> <br>
+        <div class="container">
+          <div class="row centered-form">
+          <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+          	<div class="panel panel-default">
+          		<div class="panel-heading">
+  			    		<h3 class="panel-title">Please sign up<small></small></h3>
+  			 			</div>
+  			 			<div class="panel-body">
+  			    		<form role="form">
+  			    			<div class="row">
 
-        Family Name: <input id="FamilyName" type="text" size="20"/>
-        <br> <br>
+  			    				<div class="col-xs-6 col-sm-6 col-md-6">
+  			    					<div class="form-group">
+  			                <input type="text" name="first_name" id="Name" class="form-control input-sm" placeholder="First Name">
+  			    					</div>
+  			    				</div>
 
-        E-mail: <input id="SignInMail" type="text" size="20"/>
-        <br> <br>
+  			    				<div class="col-xs-6 col-sm-6 col-md-6">
+  			    					<div class="form-group">
+  			    						<input type="text" name="last_name" id="FamilyName" class="form-control input-sm" placeholder="Last Name">
+  			    					</div>
+  			    				</div>
+  			    			</div>
 
-        Password: <input id="Password" type="text" size="20"/>
-        <br> <br>
+  			    			<div class="form-group">
+                    <input type="email" name="email" id="SignInMail" class="form-control input-sm" placeholder="Email Address">
+  			    			</div>
 
-        Cellular Number : <input id="Pnumber" type="text" size="20"/>
-        <br> <br>
+  			    			<div class="row">
+  			    				<div class="col-xs-6 col-sm-6 col-md-6">
+  			    					<div class="form-group">
+  			    						<input type="password" name="password" id="Password" class="form-control input-sm" placeholder="Password">
+  			    					</div>
+  			    				</div>
 
-        <button id="SignUpButton">Sign Up</button>
-        <br> <br>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                      <div class="form-group">
+                        <input type="tel" name="Mobile" id="Pnumber" class="form-control input-sm" placeholder="Mobile Phone #">
+                      </div>
+                    </div>
+                </div>
 
+  			    			<input id="SignUpButton" value="Signup" class="btn btn-info btn-block">
+
+  			    		</form>
+  			    	</div>
+  	    		</div>
+      		</div>
+      	</div>
+      </div>
   </body>
 
 </html>
