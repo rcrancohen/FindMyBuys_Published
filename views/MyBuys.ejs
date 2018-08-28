@@ -1,6 +1,7 @@
 <html>
   <head>
     <title> My Buys Page</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -8,64 +9,46 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </head>
 
- </head>
+  <body>
 
-    <body>
-      <!-- Navigation Button -->
-      <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
 
-          <!-- Logo -->
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-              <a href="#" class="navbar-brand">FINDMYBUYS</a>
-          </div>
+            <a href="#" class="navbar-brand">FINDMYBUYS</a>
+        </div>
 
-          <!-- Menu Items -->
-          <div class="collapse navbar-collapse" id="mainNavBar">
-              <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Contact</a></li>
-              </ul>
-          </div>
-
+        <div class="collapse navbar-collapse" id="mainNavBar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
       </div>
   </nav>
 
+  <h1> <%= Data.UserData[0].name + ' '+ Data.UserData[0].Fname +' buys' %> </h1>
 
-      <h1> <%= Data.UserData[0].name %> </h1>
-
-      <table>
-        <tr>
-          <th>Product description</th>
-          <th>Purchase date</th>
-          <th>Estimated arrival date</th>
-          <th>Supplier Name</th>
-          <th>Status</th>
-        </tr>
-        <tr>
-          <% for(var i=0; i<Data.BuysData.length; i++) { %>
-              <td> <%= Data.BuysData[i].Descr %> </td>
-              <td> <%= Data.BuysData[i].Pdate %> </td>
-              <td> <%= Data.BuysData[i].Adate %> </td>
-              <td> <%= Data.BuysData[i].SuppDetails %> </td>
-              <td> <%= Data.BuysData[i].Status %> </td>
-        <%  }  %>
-        </tr>
-</table>
+  <hr>
 
 
-
-
+  <div class="row">
+    <div class="col-sm-8">
+      <% for(var i=0, j=1; i<Data.BuysData.length; i++, j++) { %>
+            <h3> <%= j+'.'+ Data.BuysData[i].Descr %> </h3>
+      <%  }  %>
+    </div>
+  </div>
 
 
   </body>
-
 </html>

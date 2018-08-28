@@ -47,7 +47,7 @@ app.use(express.static('./public'));
 //************************MyBuys server functions****************************************
 //URL /mubuys
   app.get('/mybuys', (req, res) => {
-      res.render(__dirname +'/views/MyBuys.ejs');
+      res.render(__dirname +'/views/mybuys.ejs');
     });
 
 //URL /mybuys:Uid - Return User ID user from DB
